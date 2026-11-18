@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q7 - Two rectangles with linear gradients on canvas</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 4 - HTML5 (Advanced)</h1>
+<h2>Q7. Two rectangles with linear gradients on canvas</h2>
+<div class="demo">
+<canvas id="grad" width="320" height="140" style="border:1px solid #333"></canvas>
+<script>
+var ctx = document.getElementById("grad").getContext("2d");
+var g1 = ctx.createLinearGradient(10, 0, 150, 0);
+g1.addColorStop(0, "red");
+g1.addColorStop(1, "yellow");
+ctx.fillStyle = g1;
+ctx.fillRect(10, 20, 140, 100);
+var g2 = ctx.createLinearGradient(170, 0, 310, 0);
+g2.addColorStop(0, "blue");
+g2.addColorStop(1, "lime");
+ctx.fillStyle = g2;
+ctx.fillRect(170, 20, 140, 100);
+</script>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>

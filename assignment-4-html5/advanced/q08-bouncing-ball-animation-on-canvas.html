@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q8 - Bouncing ball animation on canvas</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 4 - HTML5 (Advanced)</h1>
+<h2>Q8. Bouncing ball animation on canvas</h2>
+<div class="demo">
+<canvas id="ball" width="320" height="180" style="border:1px solid #333"></canvas>
+<script>
+(function () {
+  var c = document.getElementById("ball"), ctx = c.getContext("2d");
+  var x = 50, y = 50, dx = 3, dy = 2, r = 15;
+  function draw() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, 2 * Math.PI);
+    ctx.fillStyle = "crimson";
+    ctx.fill();
+    if (x + r > c.width || x - r < 0) dx = -dx;
+    if (y + r > c.height || y - r < 0) dy = -dy;
+    x += dx; y += dy;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q3 - Multi-step form (Personal, Contact, Submit)</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 3 - Forms (Advanced)</h1>
+<h2>Q3. Multi-step form (Personal, Contact, Submit)</h2>
+<div class="demo">
+<form onsubmit="event.preventDefault();alert('Form submitted')">
+<div id="step1"><h3>Step 1: Personal Info</h3>
+<label>Name: <input type="text" id="ms_n" required></label><br>
+<label>Birthdate: <input type="date" id="ms_b" required></label><br>
+<button type="button" onclick="go(2)">Next</button></div>
+<div id="step2" hidden><h3>Step 2: Contact Info</h3>
+<label>Email: <input type="email" id="ms_e" required></label><br>
+<label>Phone: <input type="tel" id="ms_p" required pattern="[0-9]{10}"></label><br>
+<button type="button" onclick="go(1)">Back</button>
+<button type="button" onclick="go(3)">Next</button></div>
+<div id="step3" hidden><h3>Step 3: Submit</h3>
+<p>Please review your details and submit.</p>
+<button type="button" onclick="go(2)">Back</button>
+<button type="submit">Submit</button></div>
+</form>
+<script>
+function go(n) {
+  var cur = document.querySelector("[id^=step]:not([hidden])");
+  if (n > Number(cur.id.slice(4))) {
+    var inputs = cur.querySelectorAll("input");
+    for (var i = 0; i < inputs.length; i++) { if (!inputs[i].reportValidity()) return; }
+  }
+  for (var s = 1; s <= 3; s++) document.getElementById("step" + s).hidden = (s !== n);
+}
+</script>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>

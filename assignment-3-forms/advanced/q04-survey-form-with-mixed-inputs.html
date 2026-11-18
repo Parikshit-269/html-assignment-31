@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q4 - Survey form with mixed inputs</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 3 - Forms (Advanced)</h1>
+<h2>Q4. Survey form with mixed inputs</h2>
+<div class="demo">
+<form onsubmit="event.preventDefault();alert('Form submitted')">
+<label>Your name: <input type="text" name="name"></label><br>
+<fieldset><legend>How satisfied are you?</legend>
+<label><input type="radio" name="sat" value="good"> Good</label>
+<label><input type="radio" name="sat" value="ok"> Okay</label>
+<label><input type="radio" name="sat" value="bad"> Poor</label></fieldset>
+<fieldset><legend>Which features do you use?</legend>
+<label><input type="checkbox" name="ft" value="search"> Search</label>
+<label><input type="checkbox" name="ft" value="chat"> Chat</label>
+<label><input type="checkbox" name="ft" value="reports"> Reports</label></fieldset>
+<label>How often do you visit?
+<select name="freq"><option>Daily</option><option>Weekly</option><option>Monthly</option></select></label><br>
+<label>Suggestions:<br><textarea name="sug" rows="3" cols="40"></textarea></label><br>
+<button type="submit">Submit survey</button>
+</form>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q6 - JavaScript house on canvas</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 4 - HTML5 (Advanced)</h1>
+<h2>Q6. JavaScript house on canvas</h2>
+<div class="demo">
+<canvas id="house" width="300" height="220" style="border:1px solid #333"></canvas>
+<script>
+var ctx = document.getElementById("house").getContext("2d");
+ctx.fillStyle = "#c97b3d";
+ctx.fillRect(60, 100, 180, 100);
+ctx.beginPath();
+ctx.moveTo(40, 100);
+ctx.lineTo(150, 30);
+ctx.lineTo(260, 100);
+ctx.closePath();
+ctx.fillStyle = "#8b2e2e";
+ctx.fill();
+ctx.fillStyle = "#87ceeb";
+ctx.fillRect(90, 130, 40, 40);
+ctx.fillStyle = "#5a3a1a";
+ctx.fillRect(160, 140, 40, 60);
+</script>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q1 - Registration form with full validation</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 16px;line-height:1.5}
+section.q{border:1px solid #ccc;border-radius:6px;padding:12px 16px;margin:16px 0}
+h2{font-size:1.05em;color:#1f4e79}
+.demo{background:#f7f7f7;padding:10px;margin-top:8px}
+label{display:inline-block;margin:4px 0}
+input,select,textarea,button{margin:4px 0}
+nav.h a{margin-right:12px}
+svg,canvas{background:#fff}
+figure{display:inline-block;margin:6px}
+.err{color:#b00020;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>HTML Assignment 3 - Forms (Advanced)</h1>
+<h2>Q1. Registration form with full validation</h2>
+<div class="demo">
+<form onsubmit="event.preventDefault();alert('Form submitted')">
+<label>Name: <input type="text" id="rg_n" required minlength="3"></label><br>
+<label>Email: <input type="email" id="rg_e" required></label><br>
+<label>Password: <input type="password" id="rg_p" required minlength="8"></label><br>
+<label>Confirm Password: <input type="password" id="rg_c" required></label><br>
+<fieldset><legend>Gender</legend>
+<label><input type="radio" name="g" value="m" required> Male</label>
+<label><input type="radio" name="g" value="f"> Female</label>
+<label><input type="radio" name="g" value="o"> Other</label></fieldset>
+<label>Country: <select id="rg_co" required><option value="">-- Select --</option><option>India</option><option>USA</option><option>UK</option></select></label><br>
+<span class="err" id="rg_err"></span><br>
+<button type="submit">Register</button>
+</form>
+<script>
+document.getElementById("rg_c").form.addEventListener("submit", function () {
+  var same = document.getElementById("rg_p").value === document.getElementById("rg_c").value;
+  document.getElementById("rg_err").textContent = same ? "" : "Passwords do not match";
+});
+</script>
+</div>
+<p><a href="../../index.html">&larr; Back to index</a></p>
+<footer><small>Parikshit Prakash Koli | MCA Div A | Roll No 31</small></footer>
+</body>
+</html>
